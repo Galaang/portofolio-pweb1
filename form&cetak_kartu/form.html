@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <title>Formulir</title>
+</head>
+
+<body>
+    <!-- form -->
+    <section class="my-5" id="form">
+        <div class="container">
+            <div class="row">
+                <h2 class="section-header text-md-start text-center">Form Pendaftaran</h2>
+            </div>
+            <form class="row g-3" action="cetak_kartu.html" method="get">
+                <div class="col-md-6">
+                    <label for="nama" class="form-label">Nama</label>
+                    <input type="text" class="form-control" id="nama" name="nama">
+                </div>
+                <div class="col-md-6">
+                    <label for="nik" class="form-label">NIK</label>
+                    <input type="text" class="form-control" id="nik" name="nik">
+                </div>
+                <div class="col-md-6">
+                    <label for="ttl" class="form-label">Tempat / Tanggal lahir</label>
+                    <input type="date" class="form-control" id="ttl" name="ttl">
+                </div>
+                <div class="col-md-6 form-check">
+                    <label for="jnskl" class="form-label">Jenis kelamin</label>
+                    <br>
+                    <input class="form-check-input" type="radio" name="jnskl" id="jnskl" value="Laki-Laki">
+                    <label class="form-check-label" for="jnskl">Laki-Laki</label>
+                    <br>
+                    <input class="form-check-input" type="radio" name="jnskl" id="jnskl">
+                    <label class="form-check-label" for="jnskl">Perempuan</label>
+
+                </div>
+                <div class="col-12">
+                    <label for="Alamat" class="form-label">Alamat</label>
+                    <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Jl. ">
+                </div>
+                <div class="col-12">
+                    <label for="prodi" class="form-label">Program Studi</label>
+                    <br>
+                    <select id="prodi" name="prodi" style="width: 100%">
+                        <option>-</option>
+                        <option>Teknik Informatika</option>
+                        <option>Teknik Mesin</option>
+                        <option>Teknik Listrik</option>
+                        <option>Teknik Elektro</option>
+                        <option>Teknik Pengendalian Pencemaran Lingkungan</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="asal_skl" class="form-label">Asal Sekolah</label>
+                    <input type="text" class="form-control" id="asal_skl" name="asal_skl">
+                </div>
+                <div class="col-md-4">
+                    <label for="status_skl" class="form-label">Status Sekolah</label>
+                    <select id="status_skl" name="status_skl" class="form-select">
+                        <option>-</option>
+                        <option>Swasta</option>
+                        <option>Negeri</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label for="info" class="form-label">Informasi Lain</label>
+                    <input type="text" class="form-control" id="info" name="info">
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary" onclick="cetak()">Kirim</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- end form -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function cetak() {
+            const _nama = document.getElementById("nama").value;
+            const _nik = document.getElementById("nik").value;
+            const _jnskl = document.getElementById("jnskl").value;
+            const _ttl = document.getElementById("ttl").value;
+            const _alamat = document.getElementById("alamat").value;
+            const _prodi = document.getElementById("prodi").value;
+            const _asal_skl = document.getElementById("asal_skl").value;
+            const _status_skl = document.getElementById("status_skl").value;
+            const _info = document.getElementById("info").value;
+        }
+    </script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

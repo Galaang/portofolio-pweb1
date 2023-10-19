@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.rtl.min.css">
+    <title>Cetak Kartu</title>
+</head>
+
+<body>
+    <section class="my-5" id="form">
+        <div class="container">
+            <div class="row">
+                <!-- table header -->
+                <table width="100%" class="table table-borderless">
+                    <tr>
+                        <td rowspan="3" class="col-md-1"><img src="../img/logo_pnc.png" height="150px" width="150px"></td>
+                        <td><h4 class="fw-bold">POLITEKNIK NEGERI CILACAP</h4></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-5">
+                            <h5>KARTU PESERTA PMB ONLINE</h5>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-6"><h5>TA 2022/2023</h5></td>
+                        <td></td>
+                        <td style="text-align: right;" class="fw-bold">210202036</td>
+                    </tr>
+                </table>
+                <!-- end header -->
+
+                <hr size="5px" style="background-color: black; opacity: 100%;">
+
+                <table border="0" class="table table-bordered" style="letter-spacing: 1px">
+                    <tr>
+                        <td rowspan="5">
+                            <img src="../img/foto 3x3.jpeg" width="150" height="150" alt="" />
+                        </td>
+                        <td class="col-md-5">
+                            <p>Nama</p>
+                        </td>
+                        <td class="col-md-5" id="cetaknama"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-6">
+                            <p>NIK</p>
+                        </td>
+                        <td id="cetaknik"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-6">
+                            <p>Tempat / Tanggal Lahir</p>
+                        </td>
+                        <td class="" id="cetakttl"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Jenis Kelamin</p>
+                        </td>
+                        <td id="cetakjnsklmn"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Nomer Peserta</p>
+                        </td>
+                        <td>
+                            <p>210202036</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Alamat</p>
+                        </td>
+                        <td colspan="2" id="cetakalamat"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Tanggal Pendaftaran</p>
+                        </td>
+                        <td colspan="2" id="cetaktgl"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Program Studi</p>
+                        </td>
+                        <td colspan="2" id="cetakprodi"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Asal Sekolah</p>
+                        </td>
+                        <td colspan="2" id="cetakskl"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Status Sekolah</p>
+                        </td>
+                        <td colspan="2" id="cetakstatusskl"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Informasi Lain</p>
+                        </td>
+                        <td colspan="2" id="cetakinfo"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- js cetak kartu -->
+    <script type="text/javascript">
+        window.addEventListener('load', () => {
+            const params = (new URL(document.location)).searchParams;
+
+            const _nama = params.get('nama');
+            const _nik = params.get('nik');
+            const _jnskl = params.get('jnskl');
+            const _ttl = params.get('ttl');
+            const _alamat = params.get('alamat');
+            const _prodi = params.get('prodi');
+            const _asal_skl = params.get('asal_skl');
+            const _status_skl = params.get('status_skl');
+            const _info = params.get('info');
+
+            let date = new Date();
+            let year = date.getFullYear();
+            let month = date.getMonth() + 1;
+            let day = date.getDate();
+
+            document.getElementById("cetaknama").innerHTML=_nama;
+            document.getElementById("cetaknik").innerHTML=_nik;
+            document.getElementById("cetakttl").innerHTML=_ttl;
+            document.getElementById("cetakjnsklmn").innerHTML=_jnskl;
+            document.getElementById("cetakalamat").innerHTML=_alamat;
+            document.getElementById("cetaktgl").innerHTML=day + "-" + month + "-" + year;
+            document.getElementById("cetakprodi").innerHTML=_prodi;
+            document.getElementById("cetakskl").innerHTML=_asal_skl;
+            document.getElementById("cetakstatusskl").innerHTML=_status_skl;
+            document.getElementById("cetakinfo").innerHTML=_info;
+    }
+        )
+    </script>
+    <!-- js cetak kartu -->
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
